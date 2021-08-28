@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/news', function () {
-    $news = DB::table('news')->get();
-    return $news;
-});
+Route::get('/news', [NewsController::class, 'index']);
