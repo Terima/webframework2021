@@ -14,8 +14,15 @@ use App\Http\Controllers\NewsController;
 |
 */
 
+# FrontEnd
 Route::get('/', function () {
     return view('index');
 });
 
+#BREAD (Browse, Read, Edit, Add, Delete)
 Route::get('/news', [NewsController::class, 'index']);
+
+#BackEnd
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
